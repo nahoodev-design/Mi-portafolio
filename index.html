@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahoo - Desarrollador Web</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Iconos (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- =======================
+    SECCIÓN 1: HEADER & NAVBAR
+    ======================== -->
+    <header id="header-section">
+        <nav class="navbar">
+            <div class="nav-container">
+                <img class="nav-logo" src="/Imagenes/logo.png" alt="logo">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                    <li class="nav-item"><a href="#planes" class="nav-link">Planes</a></li>
+                    <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-content container">
+            <div class="header-main-text">
+                <h1>¡Hola!</h1>
+                <h1>Yo soy <span class="text-gradient">Nahoo</span></h1>
+                <h2 class="subtitle">Desarrollador web</h2>
+                <p><b>¿Tenés la idea? Perfecto</b>, yo me encargo de hacerla realidad. <b>Hagamos juntos una web adaptable</b>, <b>moderna</b> y <b>optimizada</b>.</p>
+                <div class="features">
+                    <ul class="features-list">
+                        <li><i class="fas fa-code text-gradient"></i></li>
+                        <li><i class="fas fa-palette text-gradient"></i></li>
+                        <li><i class="fas fa-mobile-alt text-gradient"></i></li>
+                        <li><i class="fas fa-rocket text-gradient"></i></li>
+                        <li><i class="fas fa-server text-gradient"></i></li>
+                    </ul>
+                </div>
+                <div class="header-buttons">
+                    <a href="#ver-mas" class="btn">Ver más</a>
+                    <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                </div>
+            </div>
+            <div class="header-dynamic-box">
+                <h3 id="dynamic-title">¿Sabías que...?</h3>
+                <p id="dynamic-text">Los girasoles necesitan más de 6 horas al día para crecer totalmente fuertes y sanos. Sí, no tiene nada que ver con programación, pero nunca viene mal saber de algo nuevo.</p>
+            </div>
+            <div class="mobile-scroll-bar">Texto</div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =======================
+        SECCIÓN 2: VER MÁS
+        ======================== -->
+        <section id="ver-mas" class="section-light section-light--ver-mas">
+            <div class="container ver-mas-container">
+                <div class="ver-mas-left">
+                    <h2 class="section-title section-title--center">¿Necesitas una página web?</h2>
+                    <p>¿Tenés un <b>negocio</b> o <b>emprendimiento</b> y querés llevarlo al siguiente nivel? Entonces <b>sí</b>, definitivamente <b>necesitás una página web</b>.</p>
+
+                    <p><b>¿Por qué?</b> Una web no es solo algo "lindo" en internet. Es tu carta de presentación, tu <b>espacio propio abierto 24/7</b>. Es donde tus clientes te encuentran, confían en vos y deciden contactarte.</p>
+
+                    <p>Hoy en día, <b>si tu negocio no aparece en internet</b>, para mucha gente simplemente <b>no existe</b>. La gente busca <b>todo online</b>: <b class="b-color">proveedores</b>, <b class="b-color">servicios</b>, <b class="b-color">productos</b>. Si no te encuentran, <b>se van</b> con la competencia.</p>
+
+                    <h3>Lo que tu web necesita para funcionar</h3>
+                    <p><b>Una buena página web</b> solo funciona si está bien pensada. Tiene que ser <b>responsive</b> —debe verse bien en cualquier dispositivo—, <b>rápida</b> (que no haga esperar a tus clientes), <b>clara</b> (que se entienda qué ofrecés al instante) y <b>fácil de contactar</b> (con formulario o redes sociales a un solo clic).</p>
+
+                    <p>¿Y sabés qué es lo mejor? <a href="#sobre-mi"><b class="b-color">Que yo puedo ofrecerte todo eso</b>.</a></p>
+                </div>
+                <div class="ver-mas-right">
+                    <img src="/Imagenes/section image.png" alt="" class="about-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================
+        SECCIÓN 3: SOBRE MÍ
+        ======================== -->
+
+
+        <section id="sobre-mi" class="section-dark section-dark--sobre-mi">
+        <div class="container">
+            <!-- Título principal -->
+            <h2 class="section-title">Sobre mí</h2>
+
+            <!-- Tarjetas: Quién soy + Habilidades -->
+            <div class="about-cards">
+            <div class="about-card about-card--one">
+                <h3>¿Quién soy?</h3>
+                <p>Soy Nahuel, un desarrollador web Front-end, especializado en Landing Pages <b>modernas</b> y <b>funcionales</b> <i>—sí, una buena página web—</i>. Me enfoco en crear sitios <b>rápidos</b>, <b>claros</b> y <b>profesionales</b>, adaptados a cada marca o emprendedor.</p>
+
+                <p>Trabajo junto a <b>negocios locales</b> y <b>emprendedores</b>, ayudándoles a <b>impulsar su presencia online</b> y <b>captar más clientes</b>. Mi objetivo es que tu web trabaje por vos, no que te complique.</p>
+                
+                <!-- Envoltura para la imagen -->
+                <div class="about-image-wrapper">
+                <img src="/Imagenes/sobre-mi-profile.jpeg" alt="" class="about-image">
+                </div>
+            </div>
+
+            <div class="about-card">
+                <h3>Habilidades Técnicas</h3>
+                <p>No basta con que una web sea bonita —eso cualquiera lo puede hacer—, pero... ¿está bien hecha?</p>
+                <ul class="skills-list">
+                <li><i class="fas fa-code text-gradient"></i> HTML Semántico </li>
+                <li><i class="fas fa-project-diagram text-gradient"></i> Metodología BEM </li>
+                
+                <li><i class="fas fa-palette text-gradient"></i> CSS Moderno </li> 
+                <li><i class="fas fa-mobile-alt text-gradient"></i> Responsive & Mobile First</li>
+                <li><i class="fas fa-image text-gradient"></i> Imágenes Responsive </li>
+                <li><i class="fas fa-magic text-gradient"></i> Animaciones Web </li>
+                <li><i class="fas fa-universal-access text-gradient"></i> Accesibilidad Web </li>
+                
+                <li><i class="fas fa-tachometer-alt text-gradient"></i> Rendimiento Web </li>
+                <li><i class="fas fa-search text-gradient"></i> Optimización SEO </li>
+                <li><i class="fas fa-server text-gradient"></i> Web Hosting y Despliegue </li>
+                </ul>
+
+                <div class="habilidades">
+                <h4>Dominio Técnico:</h4>
+                <div class="progress-all">
+                <div class="progress-bar">
+                    <span class="progress-label">HTML</span>
+                    <div class="progress-track">
+                    <div class="progress-fill" style="width: 85%;"><span>85%</span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <span class="progress-label">CSS</span>
+                    <div class="progress-track">
+                    <div class="progress-fill" style="width: 80%;"><span>80%</span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <span class="progress-label">JS <span class="working-status">(Trabajando...)</span></span>
+                    <div class="progress-track">
+                    <div class="progress-fill js-working"></div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Subtítulo para las preguntas frecuentes -->
+            <h2 class="section-title section-title--center" style="margin-top: 4rem;">Lo que necesitás saber</h2>
+
+            <!-- Tarjetas FAQ -->
+            <div class="faq-cards">
+            <div class="faq-card">
+                <h3>¿Cómo son mis trabajos?</h3>
+                <p>Diseños <b>limpios, rápidos y adaptables</b> a cualquier dispositivo. Cada proyecto está <b>optimizado para SEO</b> (para que tu web aparezca en Google), es <b>accesible</b> (fácil de usar para todas las personas) y cuenta con un código <b>ordenado y fácil de mantener</b>. —Y por supuesto, <b>100% personalizados</b>—.</p>
+            </div>
+
+            <div class="faq-card">
+                <h3>¿Cuánto tardo en hacer una web?</h3>
+                <p>Depende de la complejidad; una <b>landing page profesional</b> suele estar lista en <b>5 a 8 días hábiles</b>. Si incluye funcionalidades avanzadas (formularios, integraciones con redes o herramientas externas, etc.), puede llevar un poquito más. Aun así, siempre trabajo con <b>plazos claros</b> y <b>comunicación constante</b> durante todo el proceso.</p>
+            </div>
+
+            <div class="faq-card">
+                <h3>¿Es costoso?</h3>
+                <p><b>Para nada</b>. Mis precios están pensados para ser <b>accesibles</b> y adaptarse a cada proyecto. La idea es que <b>cualquier persona o emprendimiento</b> que busque calidad pueda tener su propia página web <b>sin gastar de más</b>. Además, cuento con <b>planes flexibles</b> según tus necesidades y con <b>páginas ya hechas</b> que puedo ofrecer a un <b>precio más económico</b>.</p>
+            </div>
+            </div>
+
+        </section>
+
+
+        <!-- =======================
+        SECCIÓN 4: PORTAFOLIO
+        ======================== -->
+<section id="portafolio" class="section-light section-portfolio">
+    <div class="container">
+        <h2 class="section-title">Portafolio</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">
+            Acá te muestro algunas de las páginas que diseñé. ¿Te gusta alguna? ¿O preferís algo más personalizado?</p>
+        <div class="portfolio-grid">
+            <!-- Proyecto 1 - Grande Izquierda -->
+            <a href="#proyecto1" class="portfolio-item portfolio-item--large">
+                <div class="portfolio-image">
+                    <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 1">
+                </div>
+                <div class="portfolio-content">
+                    <h3>Página web - Barberia</h3>
+                    <p>Diseño minimalista y moderno, con varias sesiones y galería de imagenes</p>
+                </div>
+                <div class="portfolio-overlay"></div>
+            </a>
+
+            <!-- Proyecto 2 - Superior Derecha -->
+            <a href="#proyecto2" class="portfolio-item portfolio-item--small">
+                <div class="portfolio-image">
+                    <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 2">
+                </div>
+                <div class="portfolio-content">
+                    <h3>En desarrollo...</h3>
+                    <p></p>
+                </div>
+                <div class="portfolio-overlay"></div>
+            </a>
+
+            <!-- Proyecto 3 - Medio Derecha -->
+            <a href="#proyecto3" class="portfolio-item portfolio-item--small portfolio-item--coming-soon">
+                <div class="portfolio-image">
+                    <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 3">
+                </div>
+                <div class="portfolio-content">
+                    <h3>Próximamente...</h3>
+                    <p></p>
+                </div>
+                <div class="portfolio-overlay portfolio-overlay--coming-soon"></div>
+            </a>
+
+            <!-- Proyecto 4 - Inferior Derecha Ancho -->
+            <a href="#proyecto4" class="portfolio-item portfolio-item--wide portfolio-item--coming-soon">
+                <div class="portfolio-image">
+                    <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 4">
+                </div>
+                <div class="portfolio-content">
+                    <h3>¡Nuevos proyectos en camino!</h3>
+                    <p></p>
+                </div>
+                <div class="portfolio-overlay portfolio-overlay--coming-soon"></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- SECCIÓN: PLANES -->
+<section id="planes" class="section-dark section-dark--planes">
+    <div class="container">
+        <h2 class="section-title">Tus Planes</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto; color: var(--color-grey-light);">
+            Elegí el que mejor se adapte a vos y a tu negocio. Todos incluyen diseño responsive, optimización y soporte.
+        </p>
+
+        <div class="plans-container">
+            <!-- Plan Esencial -->
+            <div class="plan-card">
+                <span class="plan-badge">Básico</span>
+                
+                <h4>Plan Esencial</h4>
+                <p class="plan-subtitle">Presencia digital directa.</p>
+                
+                <ul class="plan-features">
+                    <li>Diseño moderno (hasta 4 secciones)</li>
+                    <li>100% responsive</li>
+                    <li>Enlaces de contacto y redes sociales</li>
+                    <li>SEO básico</li>
+                    <li>Optimización de imágenes</li>
+                    <li>Configuración de hosting y dominio</li>
+                    <li>2 semanas de soporte</li>
+                </ul>
+
+                <p class="plan-delivery">Entrega: <b>3 a 5 días</b> hábiles</p>
+                <a href="#contacto" class="btn plan-btn">Consultar precio</a>
+            </div>
+
+            <!-- Plan Profesional (Destacado) -->
+            <div class="plan-card plan-featured">
+                <span class="plan-badge plan-badge-popular">Popular</span>
+                
+                <h4>Plan Profesional</h4>
+                <p class="plan-subtitle">Web completa para destacar.</p>
+                
+                <ul class="plan-features">
+                    <p class="plan-base-note">Todo lo del Plan Esencial, más:</p>
+                    <li>Diseño personalizado (hasta 6 secciones)</li>
+                    <li>Formulario de contacto</li>
+                    <li>Optimización avanzada</li>
+                    <li>Animaciones fluidas</li>
+                    <li>Vista previa en redes sociales</li>
+                    <li>Accesibilidad web</li>
+                    <li>Google Analytics integrado</li>
+                    <li>Soporte extendido (1 mes)</li>
+                </ul>
+
+                <p class="plan-delivery">Entrega: <b>5 a 7 días</b> hábiles</p>
+                <a href="#contacto" class="btn plan-btn">Consultar precio</a>
+            </div>
+
+            <!-- Plan Web Lista -->
+            <div class="plan-card">
+                <span class="plan-badge plan-badge-discount">Promo</span>
+                
+                <h4>Plan Express</h4>
+                <p class="plan-subtitle">Tu web lista en 48 horas.</p>
+                
+                <ul class="plan-features">
+                    <li>Diseño pre-hecho profesional</li>
+                    <li>100% responsive</li>
+                    <li>Enlaces de contacto y redes sociales</li>
+                    <li>SEO básico</li>
+                    <li>Optimización de imágenes</li>
+                    <li>Adaptación de contenido</li>
+                    <li>Configuración de hosting y dominio</li>
+                    <li>1 semana de soporte</li>
+                </ul>
+
+                <p class="plan-delivery">Entrega rápida: <b>2 a 4 días</b> hábiles</p>
+                <a href="#portafolio" class="btn plan-btn">Ver diseños disponibles</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- =======================
+        SECCIÓN 5: CONTACTO
+        ======================== -->
+<section id="contacto" class="section-dark">
+    <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p style="text-align: center; max-width: 650px; margin: 0 auto 3rem auto; color: var(--color-grey-light);">
+            ¿Ya tenés lista la idea? ¡Contame sobre tu proyecto! Si querés un presupuesto sin costo o tenés alguna duda, escribime y lo charlamos sin problema.
+        </p>
+        
+        <div class="contact-container">
+            <!-- Formulario -->
+            <div class="contact-form-wrapper">
+                <h3>Envíame un mensaje</h3>
+                <p>Completá el formulario y te respondo a la brevedad.</p>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                    <label for="title">Tipo de consulta</label>
+                    <select id="title" name="title" required>
+                        <option value="">¿En qué puedo ayudarte?</option>
+                        <option value="Presupuesto">Quiero un presupuesto</option>
+                        <option value="Proyecto">¡Tengo la idea Nahoo!</option>
+                        <option value="Consulta">Consulta o duda</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tu mensaje</label>
+                        <textarea id="message" class="textarea-contact" name="message" rows="4" placeholder="¿En qué estás pensando?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <!-- Contacto directo -->
+            <div class="contact-direct-wrapper">
+                <h3>Contacto Directo</h3>
+                <p>O si preferís escribirme directamente.</p>
+                
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-phone text-gradient"></i>
+                        <span>+54 387 548 1021</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope text-gradient"></i>
+                        <span>nahoo.dev@gmail.com</span>
+                    </li>
+                </ul>
+                
+                <a href="https://wa.me/+543875481021" target="_blank" class="btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- =======================
+    SECCIÓN 6: FOOTER
+    ======================== -->
+    <footer class="footer-dark">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Nahoo — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Cargar EmailJS PRIMERO -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Después tu script -->
+    <script src="script.js"></script>
+</body>
+</html>

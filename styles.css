@@ -1,0 +1,2097 @@
+        /* --- 1. Reset Básico y Variables Globales --- */
+        :root {
+            --color-dark: #111111;
+            --color-light: #FFFFFF;
+            --color-grey-light: #cccccc;
+            --color-grey-dark: #888888;
+            --color-primary: #FF6600; /* Naranja primario */
+            --color-primary-dark: #FF8C00;
+            --font-main: 'Inter', sans-serif;
+            --nav-height: 60px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 0.6rem + 5.5vw, 3.8rem); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: calc(var(--nav-height) + 0.5rem) 0 3rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        /* --- 2. Clases Utilitarias (Botones, Títulos, etc.) --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease-in-out;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--color-primary);
+            color: var(--color-dark);
+            transform: scale(1.05);
+            box-shadow: 0 0px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-dark);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--color-primary);
+            box-shadow: none;
+        }
+
+        /* Gradiente general (usado en "Nahoo" del header) */
+        .text-gradient {
+            background: linear-gradient(30deg, var(--color-primary-dark), var(--color-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Gradiente específico para h2 en sección "Ver Más" */
+        h2[class="text-gradient"] {
+            background: linear-gradient(90deg, #FFA500, #FF6347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            }
+
+        /*  h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            } */
+
+            p {
+                /* Mínimo,  Fórmula Fluida,  Máximo */
+                /* El texto irá de 1rem a 1.05rem, y se detendrá. */
+                /* font-size: clamp(0.93rem, 2.4vw, 1.05rem); */
+                font-size: clamp(0.93rem, 0.83rem + 0.3vw, 1.05rem);
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            }
+
+        /*  p {
+                font-size: clamp(0.5rem, 4vw, 1rem)
+                line-height: 1.5;
+                margin-bottom: 1rem;
+            } */
+
+        .section-title {
+            font-size: clamp(1.2rem, 1rem + 2vw, 2.3rem);
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--color-primary);
+        }
+
+        .section-title--center::after {
+            width: 65%;
+        }
+
+
+        .web-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .web-features li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .web-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .b-color {
+            color: #FF8C00;
+        }
+
+
+        /* Secciones Claras y Oscuras */
+        .section-light {
+            background: var(--color-light);
+            color: var(--color-dark);
+        }
+        .section-light p {
+            color: #555;
+        }
+        .section-light .form-group label {
+            color: #333;
+        }
+        .section-light .form-group input,
+        .section-light .form-group textarea {
+            background: #f0f0f0;
+            border-color: #ddd;
+            color: #111;
+        }
+        .section-light .form-group select:focus,
+        .section-light .form-group input:focus,
+        .section-light .form-group textarea:focus {
+            border-color: var(--color-primary);
+        }
+
+        .section-dark {
+            background: var(--color-dark);
+            color: var(--color-light);
+        }
+        .section-dark p {
+            color: var(--color-grey-light);
+        }
+        .section-dark .form-group label {
+            color: var(--color-grey-light);
+        }
+        .section-dark .form-group select,
+        .section-dark .form-group input,
+        .section-dark .form-group textarea {
+            background: #222;
+            border-color: #444;
+            color: var(--color-light);
+        }
+        .section-dark .form-group select:focus,
+        .section-dark .form-group input:focus,
+        .section-dark .form-group textarea:focus {
+            border-color: var(--color-primary);
+        }
+
+
+        /* Secciones - Fondos     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), */
+        .section-dark--sobre-mi, .section-dark--planes {
+            background-size: cover;        /* Ajusta la imagen para cubrir todo el contenedor sin deformarla */
+            background-position: center;   /* Centra la imagen */
+            background-repeat: no-repeat;  /* Evita que se repita */
+            background-attachment: fixed;  /* Hace que la imagen se quede fija al hacer scroll */
+            background-color: var(--color-dark); /* Fallback por si la imagen tarda en cargar */
+        }
+
+        .section-dark--sobre-mi {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.80), rgba(10, 10, 10, 0.7)),
+                url(/Imagenes/section_sobre-mi.jpeg);
+        }
+
+        .section-dark--planes {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.80), rgba(10, 10, 10, 0.7)),
+                url(/Imagenes/section_planes.jpeg);
+        }
+        
+
+
+
+
+        .section-light, .section-dark {
+            min-height: auto;
+        }
+
+        /* --- 3. Navbar --- */
+        .navbar {
+            position: static;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 50%;
+            height: 100vh;
+            background: #1a1a1a;
+            display: flex; /* ← importante */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s ease;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-item {
+                margin: 1rem 0;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                margin-left: 1rem;
+                color: var(--color-light);
+            }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            width: 50px;
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            z-index: 1002;
+            width: 30px;
+            height: 24px;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--color-light);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.25s ease-in-out;
+            transform-origin: center; /* Para que se encoja desde el centro */
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 10px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 20px;
+        }
+
+        /* Cuando está abierto (active) */
+        .hamburger.active span:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg); /* Forma la X */
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0; /* Desaparece la barra del medio */
+            transform: scaleX(-1); /* se encoje horizontalmente hasta desaparecer */
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-135deg); /* Forma la X */
+        }
+
+
+        /* --- 4. Sección 1: Header --- */
+        #header-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                        url('/Imagenes/section_header.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-top: 0; /* Header no necesita padding superior */
+            display: flex;
+            flex-direction: column; /* Para alinear nav y contenido */
+        }
+
+        .header-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+            .header-main-text {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+/* clamp(1.8rem, 4vw, 2.5rem); clamp(2.5rem, 0.6rem + 5.5vw, 3.8rem); */
+
+            .header-main-text .subtitle {
+                font-size: clamp(1.6rem, 0.2rem + 4vw, 2.5rem);
+                color: var(--color-grey-light);
+                margin-bottom: 1rem;
+                font-weight: 700;
+            }
+
+
+
+
+            .header-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                gap: 1rem;
+            }
+
+
+            
+            .header-buttons .btn {
+                width: clamp(9rem, 8rem + 2.5vw, 10rem);
+                text-align: center;
+                margin: 0;
+                padding: clamp(0.5rem, 0.3rem + 0.35vw, 0.6rem);
+                font-size: clamp(0.8rem, 0.6rem + 0.51vw, 0.95rem);
+            }
+
+            .header-main-text p {
+                font-size: clamp(0.9rem, 0.73rem + 0.5vw, 1.1rem);
+                text-align: center;
+                color: var(--color-grey-light);
+                max-width: 80%;
+            }
+
+            .header-main-text b {
+                color: #eee;
+            }
+
+            .features-list {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                list-style: none;
+                padding: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .features-list li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+            }
+
+            .features-list i {
+                font-size: clamp(1.2rem, 0.9rem + 1.1vw, 1.5rem);
+                color: var(--color-principal);
+                display: inline-flex; /* mejora el alineado */
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                transition: transform 0.3s ease; /* más fluido */
+                animation: fadeIn 0.8s ease-out forwards;
+                animation-delay: 1s;
+                opacity: 0;
+            }
+
+            .header-main-text h1:first-of-type,
+            .header-main-text h1:nth-of-type(2),
+            .header-main-text .subtitle {
+                animation: fadeIn 0.8s ease-out forwards;
+                transform: none;
+            }
+
+            .header-main-text h1:first-of-type {
+                animation-delay: 0.2s;
+                opacity: 0;
+            }
+
+            .header-main-text h1:nth-of-type(2) {
+                animation-delay: 0.4s;
+                opacity: 0;
+            }
+
+            .header-main-text .subtitle {
+                animation-delay: 0.6s;
+                opacity: 0;
+            }
+
+            .header-main-text p {
+                animation: fadeIn 0.8s ease-out forwards;
+                animation-delay: 0.8s;
+                opacity: 0;
+            }
+
+            .header-buttons .btn {
+                animation: fadeIn 0.8s ease-out forwards;
+                animation-delay: 1.2s;
+                opacity: 0;
+            }
+
+            .header-buttons .btn-primary {
+                animation: fadeIn 0.8s ease-out forwards;
+                animation-delay: 1.4s;
+                opacity: 0;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+
+
+
+
+
+
+
+
+        .header-dynamic-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 400px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: none; /* Oculto en móvil por defecto */
+        }
+
+        .header-dynamic-box h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .header-dynamic-box p {
+            color: var(--color-grey-light);
+            margin-bottom: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .mobile-scroll-bar {
+            display: none; /* Oculto en desktop */
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--color-light);
+            padding: 0.5rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .mobile-scroll-bar p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 20s linear infinite;
+            margin-bottom: 0;
+            color: var(--color-light);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        /* --- 5. Sección 2: Ver Más --- */
+        .ver-mas-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile First: 1 columna */
+            gap: 3rem;
+            align-items: center;
+        }
+
+
+            .ver-mas-left h3 {
+                font-size: clamp(1.3rem, 0.7rem + 1.36vw, 1.68rem);
+                color: var(--color-primary);
+                margin-top: 1rem;
+                margin-bottom: 0.2rem;
+            }
+
+
+        .ver-mas-right {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .ver-mas-right h2 {
+            font-size: clamp(2.2rem, 6vw, 2.8rem);
+            font-weight: 900;
+            transition: opacity 0.5s ease-in-out;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- 6. Sección 3: Sobre mí --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile First: 1 columna */
+            gap: 3rem;
+        }
+
+        .about-left h3, .about-right h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .skills-list li {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start; /* Alinea ícono y texto en la parte superior */
+            gap: 0.5rem;
+        }
+
+        .skills-list i {
+            font-size: 1rem;
+            min-width: 24px;
+            text-align: center;
+            margin-top: 0.2rem; /* Ajuste fino para alinear con la primera línea del texto */
+        }
+
+        .about-right h4 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .habilidades {
+            margin-top: 2rem;
+        }
+
+        .progress-all {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .progress-label .working-status {
+            font-weight: 700;
+            color:  var(--color-grey-light);
+        }
+
+        .progress-track {
+            background: #333;
+            border-radius: 8px;
+            height: 17px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+            color: var(--color-dark);
+            font-weight: 700;
+            transition: width 1s ease-in-out 0.5s;
+            font-size: 0.75rem;
+        }
+
+        
+.progress-fill.js-working {
+    width: 100%;
+    background: linear-gradient(90deg, 
+        #FF8C00 1%, 
+        #FF6600 50%, 
+        #FF6600 75%
+    );
+    background-size: 200% 100%;
+    animation: indeterminate-progress 2s linear infinite;
+}
+
+@keyframes indeterminate-progress {
+0% { transform: translateX(-100%); }  /* Empieza fuera por la izquierda */
+100% { transform: translateX(120%); } /* Sale completamente por la derecha */
+}
+
+        /* Tarjetas e Imagen */
+        .about-cards,
+        .faq-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-card,
+        .faq-card {
+            background: rgba(23, 23, 23, 0.7);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+
+        .about-card h3,
+        .faq-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 0.7rem + 1.36vw, 1.68rem)
+        }
+
+        .about-card p,
+        .faq-card p {
+            font-size: clamp(0.9rem, 0.8rem + 0.25vw, 1rem);
+        }
+
+        .about-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            display: block;
+        }
+
+
+/*
+
+.about-card--one {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-card__content {
+    flex: 0 1 auto;
+}
+
+.about-image-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.about-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    height: auto;
+    min-height: 200px;
+}
+/*
+
+
+
+
+
+        /* --- 7. Sección 4: Portafolio --- */
+        .section-portfolio {
+            padding: 5rem 0;
+        }
+
+        /* Estilos del Grid (Mobile-First) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 3rem auto 0;
+            max-width: 550px; /* 580px */
+        }
+
+        /* .portfolio-content--coming-soon {
+            height: 200px;
+        } */
+
+
+/* Estilos de Items (Mobile-First) */
+        .portfolio-item {
+            position: relative;
+            border-radius: 16px; /* Esquinas redondeadas */
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 280px; 
+        }
+
+
+/* 2. Sobrescribimos la altura SOLO para los items "en desarrollo". Esto funciona gracias a tu clase .portfolio-item--coming-soon
+*/
+        .portfolio-item--coming-soon {
+            height: 120px; 
+        }
+
+
+
+
+        /* Imagen */
+        .portfolio-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Overlay gradiente */ /*
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(17, 17, 17, 0.95) 100%
+            );
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        } */
+
+        /* Overlay oscuro */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(17, 17, 17, 0.65) 100%
+            );
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-overlay--coming-soon {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        /* Contenido del proyecto */
+        .portfolio-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            z-index: 2;
+            opacity: 0.9;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .portfolio-content h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #FF6600, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+
+
+
+        /* Estilos "Coming Soon" */
+        .portfolio-item--coming-soon .portfolio-content {
+            /* Esto centra el contenido vertical y horizontalmente */
+            inset: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Combinamos los dos bloques que tenías para el h3 */
+        .portfolio-item--coming-soon .portfolio-content h3 {
+            color: var(--color-light);
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin: 0;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            background-clip: initial;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .portfolio-item--coming-soon .portfolio-content p {
+            display: none; /* Oculta el párrafo en "coming soon" */
+        }
+
+
+
+
+        .portfolio-content p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0rem;
+        }
+
+        /* Hover Effects */
+        .portfolio-item:hover {
+            transform: scale(1.02);
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        /*
+        .portfolio-item:hover .portfolio-overlay {
+            display: none;
+            opacity: 1;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.5) 40%,
+                rgba(17, 17, 17, 0.98) 100%
+            );
+        } */
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                rgba(17, 17, 17, 0.70) 100%
+            );
+        }
+
+        .portfolio-item--coming-soon:hover .portfolio-overlay {
+            opacity: 1;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        .portfolio-item:hover .portfolio-content {
+            transform: scale(1.02);
+            opacity: 1;
+        }
+
+        /* --- SECCIÓN DE PLANES --- */
+        .plans-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 1.5rem;
+            margin: 3rem auto 0;
+        }
+
+        /* Tarjeta base */
+        .plan-card {
+            background: rgba(30, 30, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+        }
+
+        .plan-card:hover {
+            transform: scale(1.02);
+            border-color: rgba(255, 102, 0, 0.4);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.15);
+        }
+
+        /* Tarjeta destacada (medio) */
+        .plan-card.plan-featured {
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.15) 0%, rgba(255, 140, 0, 0.1) 100%);
+            border-color: var(--color-primary);
+        }
+
+        .plan-card.plan-featured:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
+        }
+
+        /* Etiqueta inclinada */
+        .plan-badge {
+            position: absolute;
+            top: 18px;
+            right: -32px;
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0.35rem 2.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .plan-badge-popular {
+            background: #FF6600;
+        }
+
+        .plan-badge-discount {
+            background: #25D366;
+        }
+
+        /* Header de tarjeta */
+        .plan-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            font-weight: 900;
+        }
+
+        .plan-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-grey-dark);
+            margin-bottom: 1.75rem;
+            font-style: italic;
+        }
+
+        /* Lista de características */
+        .plan-features {
+            list-style: none;
+            margin: 0 0 1.75rem 0;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.93rem;
+            line-height: 1.5;
+            color: var(--color-grey-light);
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+        }
+
+        /* Nota especial "Todo lo del Plan Esencial" */
+        .plan-base-note {
+            color: var(--color-primary) !important;
+            font-weight: 700;
+            margin-bottom: 1rem !important;
+            font-style: italic;
+        }
+
+
+
+        /* Delivery info */
+        .plan-delivery {
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-grey-light);
+            margin-top: auto;
+        }
+
+        /* Botón del plan */
+        .plan-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* --- 8. Sección 5: Contacto --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile First: 1 columna */
+            gap: 3rem;
+        }
+
+        /* Headers de las subsecciones */
+        .contact-form-wrapper h3,
+        .contact-direct-wrapper h3 {
+            font-size: clamp(1.3rem, 0.7rem + 1.36vw, 1.68rem);
+            margin-bottom: 0.75rem;
+            color: var(--color-primary);
+        }
+
+        .contact-form-wrapper p,
+        .contact-direct-wrapper p {
+            margin-bottom: 2rem;
+            color: var(--color-grey-light);
+        }
+
+        /* Formulario */
+        .contact-form-wrapper {
+            max-width: 100%;
+
+        }
+
+        #contact-form {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+            max-width: 500px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .form-group select, .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            border: 1px solid;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select {
+            padding-left: 0.5rem;
+        }
+
+        .form-group select:focus, .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+        }
+
+        .textarea-contact {
+            resize: none;
+            min-height: 100px;
+            min-width: 100%;
+            line-height: 1.5;
+        }
+
+        #contact-form button {
+            width: clamp(9rem, 8rem + 2.5vw, 10rem);
+            padding: 0.8rem;
+            font-size: clamp(0.8rem, 0.6rem + 0.51vw, 0.95rem);
+        }
+
+
+
+
+        /* Mensaje de estado del formulario */
+        .form-status-message {
+            position: fixed;
+            bottom: -100px; /* Empieza oculto abajo */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            transition: bottom 0.4s ease;
+            width: min(380px, 80vw); /* ✨ clave */
+            text-align: center;
+            font-size: clamp(0.9rem, 0.8rem + 0.25vw, 1rem);
+        }
+
+        .form-status-message.show {
+            bottom: 35px; /* Se desliza hacia arriba */
+        }
+
+        
+        /* Contacto directo */
+        .contact-direct-wrapper {
+            margin-top: 0;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            color: var(--color-grey-light);
+        }
+
+        .contact-list li i {
+            font-size: 1.4rem;
+            margin-right: 1.25rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Botón WhatsApp */
+        .whatsapp-btn {
+            background: #25D366;
+            border-color: #25D366;
+            color: #fff;
+            font-size: clamp(0.8rem, 0.6rem + 0.51vw, 0.95rem);
+            display: inline-flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+        }
+
+
+
+        .whatsapp-btn:hover {
+            background: transparent;
+            border-color: #25D366;
+            color: #25D366;
+            box-shadow: none;
+        }
+
+        .whatsapp-btn i {
+            font-size: clamp(1.2rem, 0.9rem + 0.80vw, 1.5rem);
+        }
+
+
+        /* --- 9. Footer --- */
+        .footer-dark {
+            background: #0a0a0a;
+            color: var(--color-grey-dark);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        /* --- 10. Media Queries (Responsive) --- */
+        @media (min-width: 768px) {
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-menu {
+            position: static;
+            width: auto;
+            height: auto;
+            background: transparent;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            right: auto;
+            box-shadow: none;
+            z-index: auto;
+            transform: none; /* overflow-y: visible; */
+            transition: none;
+        }
+
+        .nav-item {
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: var(--color-light);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            background: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            }
+
+            
+        .header-content {
+            justify-content: space-evenly;
+            gap: 1.5rem;
+        }
+
+            .header-main-text {
+                display: block;
+            }
+
+
+
+
+            .header-main-text p {
+                text-align: left;
+                max-width: 65%;
+                margin-bottom: 1.5rem;
+            }
+
+            .features-list {
+                justify-content: left;
+                gap: 2rem;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+            .header-buttons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                gap: 1rem;
+            }
+
+        .header-dynamic-box {
+            display: none; 
+        }
+
+        .mobile-scroll-bar {
+            display: none; /* Ocultar barra scroll móvil */
+        }
+
+
+
+
+        .ver-mas-container {
+            grid-template-columns: 1fr;
+        }
+
+        .ver-mas-right {
+            display: none;
+        }
+
+
+
+
+        .skills-list li {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start; /* Alinea ícono y texto en la parte superior */
+            gap: 0.5rem;
+        }
+
+        .skills-list i {
+            font-size: 1.1rem;
+            min-width: 24px;
+            text-align: center;
+            margin-top: 0.2rem; /* Ajuste fino para alinear con la primera línea del texto */
+        }
+
+            .about-image {
+                width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+                margin: 0;
+            }
+
+
+            .about-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faq-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            
+        /* Ajustar cards */
+        .about-card,
+        .faq-card {
+            padding: 1.75rem;
+        }
+
+
+        /* Asegura que las tarjetas tengan la misma altura */
+        .about-card--one {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* clave: permite que el contenido interno se expanda */
+        }
+
+        /* Si usas wrapper: */
+        .about-image-wrapper {
+            flex: 1;
+            display: flex;
+        }
+
+
+
+
+
+
+
+        
+
+        .section-portfolio {
+            padding: 5rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 280px);
+            gap: 1rem;
+            margin-top: 3rem;
+            max-width: none;
+        }
+
+        /* Reseteamos la altura. Todos medirán 280px de alto. */
+        .portfolio-item,
+        .portfolio-item--coming-soon {
+            height: auto; 
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .portfolio-content p {
+            font-size: 0.95rem;
+        }
+
+        .portfolio-item--large,
+        .portfolio-item--small:nth-of-type(2),
+        .portfolio-item--small:nth-of-type(3),
+        .portfolio-item--wide {
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+
+
+
+
+
+
+
+
+
+            
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+            .contact-direct-wrapper {
+                margin-top: 0;
+            }
+
+
+
+
+
+
+
+        .plans-container {
+            grid-template-columns: repeat(2, minmax(320px, 350px)); /* ✅ flexible pero con límite */
+            gap: 1.5rem;
+            margin: 3rem auto 0;
+            justify-content: center;
+            padding: 0 1.5rem; /* ✅ respiro en los bordes */
+        }
+
+        /* La tercera tarjeta centrada debajo */
+        .plan-card:nth-child(3) {
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+
+        /* Etiqueta inclinada */
+        .plan-badge {
+            padding: 0.35rem 2.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        .plan-badge-popular {
+            background: #FF6600;
+        }
+
+        .plan-badge-discount {
+            background: #25D366;
+        }
+
+        /* Header de tarjeta */
+        .plan-card h4 {
+            font-size: 1.6rem;
+        }
+
+        .plan-subtitle {
+            font-size: 0.9rem;
+        }
+
+        .plan-features li {
+            font-size: 0.95rem;
+        }
+
+        .plan-features li::before {
+            font-size: 1.15rem;
+        }
+
+
+        /* Delivery info */
+        .plan-delivery {
+            font-size: 0.9rem;
+        }
+
+        /* Botón del plan */
+        .plan-btn {
+            width: 100%;
+            padding: 0.6rem;
+            font-size: clamp(0.8rem, 0.6rem + 0.51vw, 0.95rem);;
+        }
+
+
+
+
+
+
+        /* Animación escalonada para los textos del header */
+        .header-main-text h1:first-of-type {
+            animation: slideFromRightSteps 0.6s ease-out forwards;
+            animation-delay: 0.2s; /* Aparece primero */
+            opacity: 0; /* Empieza invisible */
+        }
+
+        .header-main-text h1:nth-of-type(2) {
+            animation: slideFromRightSteps 0.6s ease-out forwards;
+            animation-delay: 0.5s; /* Aparece después del "Hola" */
+            opacity: 0; /* Empieza invisible */
+        }
+
+        .header-main-text .subtitle {
+            animation: slideFromRightSteps 0.6s ease-out forwards;
+            animation-delay: 0.9s; /* Aparece al final */
+            opacity: 0; /* Empieza invisible */
+        }
+
+        .header-main-text p {
+            animation: opacity 0.6s ease-out forwards;
+            animation-delay: 1.4s; /* ← Cambia esto para que aparezca al final */
+            opacity: 0; /* Empieza invisible */
+        }
+
+            .features-list i {
+                animation: opacity-two 0.6s ease-out forwards;
+                animation-delay: 1.6s;
+                opacity: 0;
+            }
+
+        @keyframes slideFromRightSteps {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes opacity {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .header-buttons .btn {
+            animation: opacity-two 0.6s ease-out forwards;
+            animation-delay: 1.7s;
+            opacity: 0;
+        }
+
+        .header-buttons .btn-primary {
+            animation: opacity-two 0.6s ease-out forwards;
+            animation-delay: 1.8s;
+            opacity: 0;
+        }
+
+        @keyframes opacity-two {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header .header-dynamic-box {
+            animation: box-animation 0.6s ease-out forwards;
+            animation-delay: 2.5s;
+            opacity: 0;
+        }
+
+        @keyframes box-animation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+
+
+
+
+
+
+
+        
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        @media (min-width: 1024px) {
+
+        .header-main-text h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .header-main-text .subtitle {
+            color: var(--color-grey-light);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header-main-text p {
+            max-width: 85%;
+
+        }
+
+
+
+
+        .mobile-scroll-bar {
+            display: none;
+        }
+
+        .header-dynamic-box {
+            display: block; 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .ver-mas-container {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+
+
+
+
+
+        .ver-mas-right {
+            display: block;
+        }
+
+
+
+
+
+
+
+
+        .faq-cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .section-portfolio {
+            min-height: auto;
+            padding: 5rem 0;
+        }
+
+        .portfolio-grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 280px);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+
+        /* Layout Grid Desktop */
+        .portfolio-item--large {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .portfolio-item--small:nth-of-type(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .portfolio-item--small:nth-of-type(3) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .portfolio-item--wide {
+            grid-column: 3 / 5;
+            grid-row: 2 / 3;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+        }
+
+        .portfolio-content p {
+            font-size: 1rem;
+        }
+
+
+        /* Ajustes para item grande */
+        .portfolio-item--large .portfolio-content h3 {
+            font-size: 1.8rem;
+        }
+
+        .portfolio-item--large .portfolio-content p {
+            font-size: 1.15rem;
+        }
+
+
+        .about-cards {
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+
+
+
+
+
+
+        /* Ajustar cards */
+        .about-card,
+        .faq-card {
+            padding: 1.75rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .skills-list li {
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start; /* Alinea ícono y texto en la parte superior */
+            gap: 0.5rem;
+        }
+
+        .skills-list i {
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+            margin-top: 0.2rem; /* Ajuste fino para alinear con la primera línea del texto */
+        }
+
+
+            
+        /* Ajustar cards */
+        .about-card,
+        .faq-card {
+            padding: 1.75rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        /* --- SECCIÓN DE PLANES --- */
+
+        /* Tarjeta destacada (medio) */
+        .plan-card.plan-featured {
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.15) 0%, rgba(255, 140, 0, 0.1) 100%);
+            border-color: var(--color-primary);
+        }
+
+        .plan-card.plan-featured:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
+        }
+
+        .plan-card:nth-child(3) {
+            grid-column: auto;
+            justify-self: auto;
+        }
+
+        /* Etiqueta inclinada */
+        .plan-badge {
+            padding: 0.35rem 2.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        .plan-badge-popular {
+            background: #FF6600;
+        }
+
+        .plan-badge-discount {
+            background: #25D366;
+        }
+
+        /* Header de tarjeta */
+        .plan-card h4 {
+            font-size: 1.68rem;
+        }
+
+        .plan-subtitle {
+            font-size: 0.93rem;
+        }
+
+        .plan-features li {
+            font-size: 0.98rem;
+        }
+
+        .plan-features li::before {
+            font-size: 1.2rem;
+        }
+
+        /* Nota especial "Todo lo del Plan Esencial" */
+        .plan-base-note {
+            font-weight: 700;
+        }
+
+        /* Delivery info */
+        .plan-delivery {
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            max-width: 500px;
+        }
+
+
+
+    }
+
+
+
+
+
+
+        /* DESKTOP INTERMEDIO min-w 1024px pero antes de 1200px */
+        @media (min-width: 1024px) and (max-width: 1199px) {
+            .plans-container {
+                grid-template-columns: repeat(2, minmax(300px, 350px)); /* ✅ mantiene 2 columnas */
+            }
+            
+            .plan-card:nth-child(3) {
+                grid-column: 1 / -1; /* ✅ tercera tarjeta abajo centrada */
+                justify-self: center;
+            }
+
+            /* Header de tarjeta */
+            .plan-card h4 {
+                font-size: 1.6rem;
+            }
+
+            .plan-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .plan-features li {
+                font-size: 0.95rem;
+            }
+
+            .plan-features li::before {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* DESKTOP AMPLIO min-w 1200px */
+        @media (min-width: 1200px) {
+            .plans-container {
+                grid-template-columns: repeat(3, minmax(320px, 350px)); /* ✅ ahora sí 3 columnas */
+                max-width: 1200px;
+            }
+            
+            .plan-card:nth-child(3) {
+                grid-column: auto; /* ✅ vuelve a comportamiento normal */
+                justify-self: auto;
+            }
+        }
+
+
+
+
+
+
+
+/*
+
+        @media (min-width: 1250px) {
+
+        .skills-list li {
+            font-size: 1rem;
+            display: flex;
+            grid-template-columns: 1fr 1fr;
+            align-items: flex-start; /* Alinea ícono y texto en la parte superior */ /*
+            gap: 0.5rem;
+        }
+*/
+/*
+
+        .skills-list i {
+            font-size: 1.2rem;
+            min-width: 24px;
+            text-align: center;
+            margin-top: 0.2rem; /* Ajuste fino para alinear con la primera línea del texto */ /*
+        }
+    }
+      */
