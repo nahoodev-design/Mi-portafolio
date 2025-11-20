@@ -19,25 +19,36 @@
     <!-- =======================
     SECCIÓN 1: HEADER & NAVBAR
     ======================== -->
-    <header id="header-section">
-        <nav class="navbar">
-            <div class="nav-container">
-                <img class="nav-logo" src="/Imagenes/logo.png" alt="logo">
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li class="nav-item"><a href="#portafolio" class="nav-link">Portafolio</a></li>
-                    <li class="nav-item"><a href="#planes" class="nav-link">Planes</a></li>
-                    <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
+    <header class="header" id="header">
+        <nav class="nav">
+            <img class="nav-logo" src="/Imagenes/logo.png" alt="logo">
+
+            <div class="nav__toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+
+            <ul class="nav__menu" id="navMenu">
+                <li class="nav__item"><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+                <li class="nav__item"><a href="#portafolio" class="nav__link">Portafolio</a></li>
+                <li class="nav__item"><a href="#planes" class="nav__link">Planes</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+            </ul>
         </nav>
 
-        <div class="header-content container">
+        <div class="nav__overlay" id="navOverlay"></div>
+
+    </header>
+
+    <main class="main">
+        
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero__overlay"></div>
+
+            <div class="header-content container">
             <div class="header-main-text">
                 <h1>¡Hola!</h1>
                 <h1>Yo soy <span class="text-gradient">Nahoo</span></h1>
@@ -56,16 +67,17 @@
                     <a href="#ver-mas" class="btn">Ver más</a>
                     <a href="#contacto" class="btn btn-primary">Contáctame</a>
                 </div>
+                </div>
+                <div class="header-dynamic-box">
+                    <h3 id="dynamic-title">¿Sabías que...?</h3>
+                    <p id="dynamic-text">Los girasoles necesitan más de 6 horas al día para crecer totalmente fuertes y sanos. Sí, no tiene nada que ver con programación, pero nunca viene mal saber de algo nuevo.</p>
+                </div>
             </div>
-            <div class="header-dynamic-box">
-                <h3 id="dynamic-title">¿Sabías que...?</h3>
-                <p id="dynamic-text">Los girasoles necesitan más de 6 horas al día para crecer totalmente fuertes y sanos. Sí, no tiene nada que ver con programación, pero nunca viene mal saber de algo nuevo.</p>
-            </div>
-            <div class="mobile-scroll-bar">Texto</div>
-        </div>
-    </header>
+        </section>
 
-    <main>
+
+
+
 
         <!-- =======================
         SECCIÓN 2: VER MÁS
@@ -193,13 +205,13 @@
             Acá te muestro algunas de las páginas que diseñé. ¿Te gusta alguna? ¿O preferís algo más personalizado?</p>
         <div class="portfolio-grid">
             <!-- Proyecto 1 - Grande Izquierda -->
-            <a href="#proyecto1" class="portfolio-item portfolio-item--large">
+            <a href="/Proyectos/Fotografo - Nahoo/index.html" target="_blank" rel="noopener noreferrer" class="portfolio-item portfolio-item--large">
                 <div class="portfolio-image">
-                    <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 1">
+                    <img src="https://images.unsplash.com/photo-1686582523490-5d227ef38de1?w=600&q=80&auto=format" alt="Proyecto 1">
                 </div>
                 <div class="portfolio-content">
-                    <h3>Página web - Barberia</h3>
-                    <p>Diseño minimalista y moderno, con varias sesiones y galería de imagenes</p>
+                    <h3>Página Web para Fotógrafos</h3>
+                    <p>Un sitio moderno y visual, pensado para fotógrafos que quieren destacar su trabajo de forma clara y profesional.</p>
                 </div>
                 <div class="portfolio-overlay"></div>
             </a>
@@ -209,8 +221,8 @@
                 <div class="portfolio-image">
                     <img src="/Imagenes/portafolio-coming-soon.jpeg" alt="Proyecto 2">
                 </div>
-                <div class="portfolio-content">
-                    <h3>En desarrollo...</h3>
+                <div style="text-align: center;" class="portfolio-content">
+                    <h3>Próximo proyecto...</h3>
                     <p></p>
                 </div>
                 <div class="portfolio-overlay"></div>

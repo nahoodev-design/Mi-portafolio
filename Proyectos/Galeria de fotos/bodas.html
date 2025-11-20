@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de bodas - Fotografía profesional capturando momentos únicos.">
+    <title>Galería de Bodas - [NOMBRE DEL FOTÓGRAFO]</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="gallery-header">
+        <a href="../Fotografo%20-%20Nahoo/index.html#portafolio" class="gallery-back-btn" id="backBtn">
+            <i class="fas fa-arrow-left"></i> Volver al Portafolio
+        </a>
+        <h1 class="gallery-title">Historias de Amor</h1>
+        <p class="gallery-subtitle">
+            Cada boda es un universo único. Aquí encontrarás una selección de momentos espontáneos, 
+            miradas cómplices y celebraciones llenas de luz.
+        </p>
+    </header>
+
+    <main class="gallery-container">
+        <div class="masonry-grid" id="galleryGrid">
+            </div>
+    </main>
+
+<footer class="gallery-footer">
+    <p style="margin-bottom: 1.5rem; opacity: 0.8;">¿Te imaginas tus fotos así?</p>
+    <a href="../Fotografo%20-%20Nahoo/index.html#contacto" class="btn-cta">Quiero reservar mi sesión</a>
+    <br><br>
+    <small style="opacity: 0.5; font-size: 0.8rem;">&copy; 2025 [NOMBRE FOTÓGRAFO]</small>
+</footer>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        
+        <div class="lightbox-content">
+            <button class="lightbox-btn prev" onclick="changeImage(-1)">&#10094;</button>
+            <img id="lightbox-img" src="" alt="Foto ampliada">
+            <button class="lightbox-btn next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        // === CONFIGURACIÓN DE IMÁGENES ===
+        // Aquí puedes añadir todas las fotos que quieras.
+        // He mezclado verticales y horizontales para demostrar el efecto Masonry.
+        const images = [
+            'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
+            'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=80',
+            'https://images.unsplash.com/photo-1599142296733-1c1f2073e6de?w=600&q=80',
+            'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80', // Vertical
+            'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=600&q=80', // Vertical
+            'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80',
+            'https://images.unsplash.com/photo-1425421543490-6a133856ff32?w=600&q=80&',
+            'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&q=80'  // Vertical
+        ];
+
+        const galleryGrid = document.getElementById('galleryGrid');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        let currentIndex = 0;
+
+        // 1. Cargar Galería (con retraso escalonado para animación)
+        function loadGallery() {
+            images.forEach((src, index) => {
+                const item = document.createElement('div');
+                item.className = 'masonry-item';
+                // Animación escalonada (delay)
+                item.style.animationDelay = `${index * 0.1}s`; 
+                
+                item.innerHTML = `
+                    <img src="${src}" alt="Boda foto ${index + 1}" loading="lazy">
+                    <div class="item-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                `;
+                
+                item.onclick = () => openLightbox(index);
+                galleryGrid.appendChild(item);
+            });
+        }
+
+        // 2. Funciones Lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evitar scroll fondo
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightboxImage() {
+            // Efecto de desvanecimiento rápido al cambiar
+            lightboxImg.style.opacity = 0.5;
+            
+            // Usamos una versión de más calidad para el lightbox (opcional: cambiar URL parameter)
+            // Aquí simplemente reemplazo el parámetro de ancho para simular HD
+            const highResSrc = images[currentIndex].replace('w=600', 'w=1200');
+            
+            lightboxImg.src = highResSrc;
+            
+            setTimeout(() => {
+                lightboxImg.style.opacity = 1;
+            }, 200);
+        }
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex >= images.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            updateLightboxImage();
+        }
+
+        // 3. Event Listeners
+        // Cierra al hacer click fuera de la imagen
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.closest('.lightbox-content') === null && !e.target.closest('.lightbox-btn')) {
+               // closeLightbox(); 
+               // (Opcional: Si quieres que cierre al clickear lo negro, descomenta arriba.
+               // A veces es mejor forzar el uso de la X para evitar cierres accidentales en móviles)
+            }
+        });
+
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') changeImage(1);
+            if (e.key === 'ArrowLeft') changeImage(-1);
+        });
+
+        (function(){
+        const backBtn = document.getElementById('backBtn');
+        if (!backBtn) return;
+        backBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            // Si hay historial, volvemos; si no, redirigimos al index (fallback)
+            if (history.length > 1) {
+            history.back();
+            // fallback por si el back no navegará (ej. entrada directa)
+            setTimeout(() => { location.href = backBtn.href; }, 600);
+            } else {
+            location.href = backBtn.href;
+            }
+        });
+        })();
+
+        // Iniciar
+        loadGallery();
+    </script>
+</body>
+</html>
