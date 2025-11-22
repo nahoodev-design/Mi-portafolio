@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nahoo Fotografía - Fotógrafo profesional especializado en retratos, bodas y fotografía comercial en Madrid.">
+    <title>NAHOO FOTOGRAFÍA | Capturando momentos eternos</title>
+
+    <!-- TÍTULO Y DESCRIPCIÓN BÁSICA (SEO) -->
+    <!-- <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content=""> -->
+
+    <!-- OPEN GRAPH (Para Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content=""> -->
+    <meta property="og:title" content="[Tu nombre] - Fotógrafo Profesional">
+    <meta property="og:description" content="Esta web convierte tus fotos en una experiencia visual que enamora al instante. Adaptala a tu estilo, subí tu portafolio en minutos ¡y empezá a vender ya!">
+    <meta property="og:image" content="https://mi-portafolio-nahoo.netlify.app/Proyectos/Fotografo%20Profesional%20-%20Nahoo/preview.png">
+    <meta property="og:image:width" content="1201">
+    <meta property="og:image:height" content="631">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- FAVICON -->
+    <!-- <link rel="icon" type="image/png" href="/favicon.png"> -->
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__menu" id="nav-menu">
+                    <a href="#servicios" class="nav__link">Servicios</a>
+                    <a href="#portafolio" class="nav__link">Portafolio</a>
+                    <a href="#contacto" class="nav__link">Contacto</a>
+
+                    <div class="nav__social-mobile">
+                        <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="Twitter" class="social-icon"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    </div>
+                </div>
+
+                <a href="#" class="nav__logo">NAHOO FOTOGRAFÍA</a>
+
+                <div class="nav__social-desktop">
+                    <a href="#" aria-label="Instagram" class="social-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" aria-label="Twitter" class="social-icon"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="#" aria-label="Facebook" class="social-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                </div>
+
+                <button class="nav__toggle" aria-label="Abrir menú" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+  <!-- Overlay para el menú móvil -->
+    <div id="nav-overlay" class="nav__overlay" aria-hidden="true"></div>
+
+
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">FOTÓGRAFO PROFESIONAL</h1>
+                <p class="hero__slogan">Capturando momentos, creando recuerdos eternos</p>
+                <div class="hero__actions">
+                    <a href="#portafolio" class="btn">Ver Portfolio</a>
+                    <a href="#contacto" class="btn btn--primary">Reservar Sesión</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section">
+            <div class="container">
+                <header class="section__header section__header--center">
+                    <h2 class="section__title">Mis Servicios</h2>
+                    <div class="section__decoration"></div>
+                </header>
+
+                <div class="services__grid">
+                    <article class="service-card">
+                        <div class="service-card__header">
+                            <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                            <h3 class="service-card__title">Retratos</h3>
+                        </div>
+                        <p class="service-card__desc">Sesiones personales diseñadas para capturar tu esencia con iluminación profesional.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__header">
+                            <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            <h3 class="service-card__title">Bodas</h3>
+                        </div>
+                        <p class="service-card__desc">Cobertura completa de tu día especial, capturando emociones espontáneas y detalles.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__header">
+                            <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <h3 class="service-card__title">Familia</h3>
+                        </div>
+                        <p class="service-card__desc">Recuerdos atemporales con tus seres queridos en estudio o exteriores.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__header">
+                            <svg class="service-card__icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            <h3 class="service-card__title">Comercial</h3>
+                        </div>
+                        <p class="service-card__desc">Fotografía de producto y marca para elevar la imagen de tu negocio.</p>
+                    </article>
+                </div>
+            <div class="section__line"></div>
+            </div>
+            
+        </section>
+
+        <section id="portafolio" class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title">Mi Portafolio</h2>
+                    <div class="section__decoration"></div>
+                </header>
+
+                <div class="portfolio">
+                    <div class="carousel">
+                        <div class="carousel__track-container">
+                            <ul class="carousel__track" id="track">
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Retrato mujer" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 1</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1552086231-dde3eb12cf60?w=800&q=80&auto=format" alt="Boda pareja" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 2</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Boda detalles" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 3</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Moda exterior" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 4</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fotografía producto" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 5</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                                <li class="carousel__slide">
+                                    <img src="https://images.unsplash.com/photo-1551316679-9c6ae9dec224?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Arquitectura" class="carousel__image">
+                                    <!-- info permanente en la parte inferior (párrafo encima del título) -->
+                                    <div class="carousel__info">
+                                        <p class="carousel__subtitle">Subtitulo</p>
+                                        <h3 class="carousel__title">Categoria 6</h3>
+                                    </div>
+
+                                    <!-- overlay para botón en hover -->
+                                    <div class="carousel__overlay">
+                                        <span class="btn">Ver Galería</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="carousel__nav">
+                            <button class="carousel__btn" id="prevBtn" aria-label="Imagen anterior">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </button>
+                            <button class="carousel__btn" id="nextBtn" aria-label="Siguiente imagen">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <div class="section__line"></div>
+            </div>
+        </section>
+
+        <section class="section quotes">
+            <div class="container">
+                <blockquote class="quote">
+                    <p class="quote__text">"Con más de 8 años de experiencia, mi enfoque combina técnica profesional con una visión artística única. No solo tomo fotos, capturo la esencia."</p>
+                    <footer class="quote__author">— Nahoo, Fotógrafo Principal</footer>
+                </blockquote>
+            <div class="section__line"></div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title">Hablemos</h2>
+                    <div class="section__decoration"></div>
+                </header>
+
+                <div class="contact__container">
+                    <form class="form" action="#" method="POST">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Nombre</label>
+                            <input type="text" id="name" class="form__input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <input type="email" id="email" class="form__input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="phone" class="form__label">Teléfono</label>
+                            <input type="tel" id="phone" class="form__input">
+                        </div>
+                        <div class="form__group">
+                            <label for="message" class="form__label">Mensaje</label>
+                            <textarea id="message" class="form__textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary" style="margin-top: 1rem;">Enviar Mensaje</button>
+                    </form>
+
+                    <div class="contact__info">
+                        <div class="info-card">
+                            <div class="info-card__icon-box">
+                                <svg class="info-card__icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+34 612 345 678</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card__icon-box">
+                                <svg class="info-card__icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hola@nahoofoto.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card__icon-box">
+                                <svg class="info-card__icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h4>Estudio</h4>
+                                <p>Studio Nahoo, Madrid</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/34612345678" class="btn btn--whatsapp" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__line"></div>
+        <p class="footer__copy">© 2023 NAHOO FOTOGRAFÍA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /* 1. NAVEGACIÓN: Scroll Effect & Mobile Toggle */
+            const header = document.getElementById('header');
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav__link');
+            const navOverlay = document.getElementById('nav-overlay');
+
+            // Scroll Effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+            });
+
+            // Mobile Toggle
+            navToggle.addEventListener('click', () => {
+                const opening = !navMenu.classList.contains('nav__menu--active');
+
+                navMenu.classList.toggle('nav__menu--active');
+                document.body.style.overflow = opening ? 'hidden' : '';
+                document.body.classList.toggle('is-menu-open', opening);
+            });
+
+            // Cerrar menú al hacer click en el overlay
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('nav__menu--active');
+                document.body.style.overflow = '';
+                document.body.classList.remove('is-menu-open');
+            });
+
+            // Cerrar menú al hacer click en un link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('nav__menu--active');
+                    document.body.style.overflow = '';
+                    document.body.classList.remove('is-menu-open');
+                });
+            });
+// ...existing code...
+
+            /* Header Hide/Show al salir del Hero */
+
+(function() {
+    const BREAKPOINT = 768;
+    const hero = document.querySelector('.hero');
+
+    // umbral para mostrar el header después de subir (en px)
+    const SCROLL_UP_THRESHOLD = window.matchMedia('(pointer: coarse)').matches ? 60 : 100;
+
+    let lastY = window.scrollY;
+    let scrollUpAccum = 0;
+    let autoHideTimer = null;
+    let disableAutoHide = false;
+
+    const isDesktop = () => window.innerWidth >= BREAKPOINT;
+    const heroInView = () => window.scrollY < (hero ? hero.offsetHeight : 500);
+
+    const showHeader = () => { header.classList.remove('header--hidden'); header.classList.add('header--visible'); };
+    const hideHeader = () => { header.classList.remove('header--visible'); header.classList.add('header--hidden'); };
+
+    // asegurar estado inicial con rAF para que la primera transición funcione
+    header.classList.add('header--visible');
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            if (!isDesktop()) {
+                showHeader();
+            } else {
+                if (heroInView()) showHeader(); else hideHeader();
+            }
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!isDesktop()) return;
+
+        const y = window.scrollY;
+        const delta = y - lastY;
+        const scrollingUp = delta < 0;
+
+        if (heroInView()) {
+            showHeader();
+            if (autoHideTimer) { clearTimeout(autoHideTimer); autoHideTimer = null; }
+            disableAutoHide = true;
+            scrollUpAccum = 0;
+        } else {
+            if (!scrollingUp) {
+                hideHeader();
+                scrollUpAccum = 0;
+            } else {
+                scrollUpAccum += Math.abs(delta);
+                if (scrollUpAccum >= SCROLL_UP_THRESHOLD) {
+                    showHeader();
+                    scrollUpAccum = 0;
+                    if (autoHideTimer) { clearTimeout(autoHideTimer); autoHideTimer = null; }
+
+                    if (!disableAutoHide) {
+                        autoHideTimer = setTimeout(() => {
+                            if (!heroInView()) hideHeader();
+                            autoHideTimer = null;
+                        }, 3000);
+                    } else {
+                        disableAutoHide = false;
+                    }
+                }
+            }
+        }
+
+        lastY = y;
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        if (!isDesktop()) {
+            if (autoHideTimer) { clearTimeout(autoHideTimer); autoHideTimer = null; }
+            showHeader();
+        } else {
+            if (heroInView()) showHeader(); else hideHeader();
+        }
+    });
+})();
+
+
+
+
+            /* 2. CARRUSEL: Logic Vanilla JS */
+            const track = document.getElementById('track');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const slides = Array.from(track.children);
+            
+            let currentIndex = 0;
+            let slidesPerView = getSlidesPerView();
+            
+            function getSlidesPerView() {
+                if (window.innerWidth >= 1024) return 3;   // desktop
+                if (window.innerWidth >= 768) return 2;    // tablet
+                return 1;                                   // móvil
+            }
+
+            function updateCarousel() {
+                if (!slides.length) return;
+                const slideRect = slides[0].getBoundingClientRect();
+                const slideWidth = slideRect.width;
+
+                // obtener el gap real aplicado por CSS (fallback 0)
+                const trackStyle = window.getComputedStyle(track);
+                const gap = parseFloat(trackStyle.gap) || parseFloat(trackStyle.columnGap) || 0;
+
+                const amountToMove = (slideWidth + gap) * currentIndex;
+                track.style.transform = `translateX(-${amountToMove}px)`;
+            }
+
+            // Next Button
+            nextBtn.addEventListener('click', () => {
+                const maxIndex = slides.length - slidesPerView;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop infinito opcional
+                }
+                updateCarousel();
+            });
+
+            // Prev Button
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = slides.length - slidesPerView;
+                }
+                updateCarousel();
+            });
+
+            // Resize Listener
+            // Next / Prev no cambian (usar currentIndex como ya tienes)
+            // Ajuste en resize: recalcular slidesPerView y limitar currentIndex
+            window.addEventListener('resize', () => {
+                slidesPerView = getSlidesPerView();
+                const maxIndex = Math.max(0, slides.length - slidesPerView);
+                currentIndex = Math.min(currentIndex, maxIndex);
+                updateCarousel();
+            });
+
+
+            /* 3. CARRUSEL: Touch Swipe (Mobile) */
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+
+            track.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    // Swipe Left (Next)
+                    nextBtn.click();
+                }
+                if (touchEndX > touchStartX + 50) {
+                    // Swipe Right (Prev)
+                    prevBtn.click();
+                }
+            }
+        });
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>
